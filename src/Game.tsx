@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import Square from './Square'
 
@@ -8,6 +8,14 @@ export default function Game() {
 
   const [gameState, setGameState] = useState(INITIAL_GAME_STATE)
   const [currentPlayer, setCurrentPlayer] = useState("X")
+
+  useEffect(() => {
+    changePlayer();
+  }, [gameState])
+
+  const changePlayer = () => {
+    setCurrentPlayer(currentPlayer === "X" ? "O" : "X")
+  }
 
   const handleCellClick = (event: any) => {
     const cellIndex = Number(event.target.getAttribute("data-cell-index"))
