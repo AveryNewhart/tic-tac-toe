@@ -25,6 +25,13 @@ export default function Game() {
   const [currentPlayer, setCurrentPlayer] = useState("X")
   const [scores, setScores] = useState(INITIAL_SCORES)
 
+useEffect(() => {
+  const storedScores = localStorage.getItem("scores")
+  if (storedScores) {
+    setScores(JSON.parse(storedScores))
+  }
+}, [])
+
   useEffect(() => {
     if (gameState === INITIAL_GAME_STATE) {
       return;
@@ -42,6 +49,7 @@ export default function Game() {
     const newScores = { ...scores }
     newScores[currentPlayer] = newPlayerScore
     setScores(newScores)
+    localStorage.setItem("scores", JSON.stringify(newScores))
 
     resetBoard();
   }
@@ -113,10 +121,10 @@ export default function Game() {
           />
       ))}
       </div>
-      <div>
-        <p>Next Player: <span>{ currentPlayer }</span></p>
-        <p>Player X Win Count: <span>{scores["X"]}</span></p>
-        <p>Player O Win Count: <span>{scores["O"]}</span></p>
+      <div className='mx-auto w-96 text-2xl text-serif'>
+        <p className='text-white mt-5'>Next Player: <span>{ currentPlayer }</span></p>
+        <p className='text-white mt-5'>Player X Win Count: <span>{scores["X"]}</span></p>
+        <p className='text-white mt-5'>Player O Win Count: <span>{scores["O"]}</span></p>
       </div>
       </div>
   )
