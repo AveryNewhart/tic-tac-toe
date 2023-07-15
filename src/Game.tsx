@@ -28,6 +28,18 @@ export default function Game() {
     checkForWinner();
   }, [gameState]);
 
+  const resetBoard = () => setGameState(INITIAL_GAME_STATE)
+
+  const handleWin = () => {
+    window.alert(`Congrats player ${currentPlayer}! You are the winner!`);
+    resetBoard();
+  }
+
+  const handleDraw = () => {
+    window.alert("The game has ended in a draw.")
+    resetBoard();
+  }
+
   const checkForWinner = () => {
     let roundWon = false
 
