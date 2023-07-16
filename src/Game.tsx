@@ -111,7 +111,7 @@ useEffect(() => {
 
   return (
     <div className="h-full p-8 text-slate-800 bg-gradient-to-r from-cyan-500 to-blue-500">
-      <h1 className="text-center text-5xl mb-4 font-display text-white">Tic Tac Toe</h1>
+      <h1 className="text-center text-5xl mb-4 font-display text-white h1Font">Tic Tac Toe</h1>
       <div className='grid grid-cols-3 gap-3 mx-auto w-96'>
         {gameState.map((player, index) => (
             <Square
@@ -121,10 +121,10 @@ useEffect(() => {
           />
       ))}
       </div>
-      <div className='mx-auto w-96 text-2xl text-serif'>
-        <p className='text-white mt-5'>Next Player: <span>{ currentPlayer }</span></p>
-        <p className='text-white mt-5'>Player X Win Count: <span>{scores["X"]}</span></p>
-        <p className='text-white mt-5'>Player O Win Count: <span>{scores["O"]}</span></p>
+      <div className='mx-auto w-96 text-2xl scoreText'>
+        <p className='nextColor mt-5'>Next Player: <span className='currentColor'>{ currentPlayer }</span></p>
+        <p className='xColor mt-5'>Player X Win Count: <span className='xWins'>{scores["X"]}</span></p>
+        <p className='oColor mt-5'>Player O Win Count: <span className='oWins'>{scores["O"]}</span></p>
       </div>
       </div>
   )

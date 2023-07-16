@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Metal+Mania&family=Prompt:wght@300&family=Rubik+Puddles&family=Zen+Dots&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 html {
   height: 100%;
@@ -18,4 +21,41 @@ body {
 
 #root {
   height: 100%;
+}
+
+.scoreText {
+  font-family: 'Zen Dots';
+}
+
+.myText {
+  font-family: "Rubik Puddles";
+  font-weight: bold;
+}
+
+.h1Font {
+  font-family: 'Zen Dots';
+}
+
+.nextColor {
+  color: white;
+}
+
+.xColor {
+  color: yellow;
+}
+
+.oColor {
+  color: rgb(243, 139, 243);
+}
+
+.xWins {
+  background-color: rgb(243, 139, 243);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.oWins {
+  background-color: yellow;
+  padding: 5px;
+  border-radius: 5px;
 }

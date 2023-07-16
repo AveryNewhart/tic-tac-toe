@@ -18,7 +18,7 @@ function Square({ index, onClick, player }: Props) {
     {...{ onClick }}>
       <span 
       data-cell-index={index}
-      className={`transform transition-all duration-150 ease-out ${scale} ${textColor}`}>{player}</span>
+      className={`transform transition-all duration-150 ease-out myText ${scale} ${textColor}`}>{player}</span>
       </div>
   )
 }
